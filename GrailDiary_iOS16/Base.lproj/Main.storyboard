@@ -63,6 +63,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mus-Fo-wjJ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OJ6-mb-udz"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -81,6 +85,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Kcl-ot-sWA" id="Ycj-GJ-jus"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,6 +163,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dUY-0n-RDg"/>
                     </view>
+                    <connections>
+                        <outlet property="clue1TextField" destination="lBw-6q-wbz" id="Mkv-9M-JHK"/>
+                        <outlet property="clue2TextField" destination="YGe-ld-gyf" id="WgM-tk-Rv6"/>
+                        <outlet property="clue3TextField" destination="PB1-t0-36K" id="Vyw-tg-EZg"/>
+                        <outlet property="countryTextField" destination="gwc-KI-HrW" id="Izt-ce-bte"/>
+                        <outlet property="locationTextField" destination="iLR-iZ-mul" id="7Yi-7r-ZvD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wiy-eC-F1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
