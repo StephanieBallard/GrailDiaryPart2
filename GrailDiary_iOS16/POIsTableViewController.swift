@@ -36,6 +36,15 @@ extension POIsTableViewController: UITableViewDataSource {
         //TODO: finish set outlets for labels in cellcontroller, finish setting up the cell, create an array for clues?
         return cell
     }
+    
+       // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddPOIModalSegue" {
+            // TODO: Continue on step 29
+        }
+        
+    }
 }
 
 extension POIsTableViewController: AddPOIDelegate {
