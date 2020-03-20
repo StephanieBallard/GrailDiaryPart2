@@ -31,9 +31,17 @@ extension POIsTableViewController: UITableViewDataSource {
                 
         }
         let poi = pOIs[indexPath.row]
-        //        cell.locationLabel.text = poi.location
-        //        cell.countryLabel.text = poi.country
+            cell.locationTextField.text = poi.location
+            cell.countryLabel.text = poi.country
         //TODO: finish set outlets for labels in cellcontroller, finish setting up the cell, create an array for clues?
         return cell
+    }
+}
+
+extension POIsTableViewController: AddPOIDelegate {
+    func poiWasAdded(_ poi: POI) {
+        pOIs.append(poi)
+        dismiss(animated: true, completion: nil)
+        tableView.reloadData()
     }
 }
