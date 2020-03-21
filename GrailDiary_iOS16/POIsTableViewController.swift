@@ -31,19 +31,23 @@ extension POIsTableViewController: UITableViewDataSource {
                 
         }
         let poi = pOIs[indexPath.row]
-            cell.locationTextField.text = poi.location
-            cell.countryLabel.text = poi.country
-        //TODO: finish set outlets for labels in cellcontroller, finish setting up the cell, create an array for clues?
+        cell.poi = poi
         return cell
     }
     
-       // MARK: - Navigation
-
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPOIModalSegue" {
-            // TODO: Continue on step 29
+            guard let addPOIVC = segue.destination as? AddPOIViewController else { return }
+            addPOIVC.delegate = self
         }
-        
+        else if segue.identifier == "ShowPOIDetailSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow,
+                let poiDetailVC = segue.destination as? POIDetailViewController {
+                poiDetailVC.poi = pOIs[indexPath.row]
+            }
+        }
     }
 }
 
